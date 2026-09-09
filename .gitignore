@@ -1,0 +1,15 @@
+/target/
+**/.env
+**/.env.*
+!**/.env.example
+/codex-config.toml
+*.tmp
+
+# Credentials and local agent state, including nested test/deployment copies.
+**/auth.json
+**/.codex/
+**/sessions/
+**/session.json
+**/state.json
+*.key
+*.pem

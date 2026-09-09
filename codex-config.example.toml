@@ -1,0 +1,8 @@
+# Optional dedicated Codex configuration. Copy this file to
+# $TERMPIGEON_CODEX_HOME/config.toml and adjust it for your account/provider.
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+
+[features]
+js_repl = false
+goals = false

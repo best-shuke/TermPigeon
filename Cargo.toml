@@ -1,0 +1,27 @@
+[package]
+name = "term-pigeon"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+description = "Owner-only, self-hosted Telegram bridge to local coding agents"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/best-shuke/TermPigeon"
+keywords = ["telegram", "bot", "codex", "automation", "self-hosted"]
+categories = ["command-line-utilities"]
+exclude = [".env", "codex-config.toml", "target/"]
+
+[dependencies]
+anyhow = "1.0"
+dotenvy = "0.15"
+log = "0.4"
+env_logger = "0.11"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+teloxide = { version = "0.17", default-features = false, features = ["ctrlc_handler", "rustls"] }
+tokio = { version = "1.53", features = ["fs", "macros", "process", "rt-multi-thread", "sync", "time"] }
+
+[profile.release]
+strip = true
+lto = "thin"
+codegen-units = 1

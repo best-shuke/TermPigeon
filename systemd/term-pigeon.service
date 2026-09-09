@@ -1,0 +1,27 @@
+[Unit]
+Description=TermPigeon Telegram coding-agent bridge
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/
+EnvironmentFile=/etc/term-pigeon.env
+ExecStart=/usr/local/bin/term-pigeon
+Restart=always
+RestartSec=5s
+TimeoutStopSec=30s
+UMask=0077
+PrivateTmp=true
+NoNewPrivileges=true
+InaccessiblePaths=/etc/term-pigeon.env
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictRealtime=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target
